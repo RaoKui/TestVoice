@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.a20151203.testvoice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="播放" />
+
+        <Button
+            android:id="@+id/btn_pouse"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="暂停" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="鼠标" />
+
+        <SeekBar
+            android:id="@+id/sb"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:max="100" />
+
+        <Button
+            android:id="@+id/btn_video"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="视频" />
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="打开PPT"
+        android:id="@+id/btn_ppt"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_vv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone">
+        <VideoView
+            android:id="@+id/vv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_centerInParent="true"
+         />
+    </RelativeLayout>
+
+
+</RelativeLayout>
