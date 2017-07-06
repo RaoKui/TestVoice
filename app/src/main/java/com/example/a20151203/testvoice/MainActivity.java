@@ -94,9 +94,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intentSV = new Intent(MainActivity.this, VoiceService.class);
-//                stopService(intentSV);
-//                mp.stop();
+
                 startActivity(new Intent(MainActivity.this, RemoteControlActivity.class));
             }
         });
