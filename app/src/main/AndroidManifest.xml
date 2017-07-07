@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
         <service android:name=".VoiceService" />
-
         <activity android:name=".PPTActivity"></activity>
         <activity android:name=".MouseActivity"></activity>
         <activity android:name=".RemoteControlActivity"></activity>
+        <activity android:name=".DrawerActivity"></activity>
     </application>
 
 </manifest>

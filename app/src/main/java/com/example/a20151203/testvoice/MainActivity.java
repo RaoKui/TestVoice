@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 
     private MediaPlayer mp;
 
+
     private Player player;
 
     private VideoView vv;
@@ -31,9 +32,10 @@ public class MainActivity extends Activity {
         //设置视频控制器
         vv.setMediaController(new MediaController(this));
         rl = (RelativeLayout) findViewById(R.id.rl_vv);
-
         //播放完成回调
         vv.setOnCompletionListener(new MyPlayerOnCompletionListener());
+
+
 //        Uri uri = Uri.parse("http://media.music.xunlei.com/resource/96/96ec5333172afedfc2dc7429f2a7ae0d.mp3");
 //        mp = new MediaPlayer();
 //        try {
@@ -76,9 +78,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_play).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intentSV = new Intent(MainActivity.this, VoiceService.class);
-//                startService(intentSV);
-//                mp.start();
+
                 player.play();
             }
         });
@@ -109,7 +109,22 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, IJKDemoActivity.class));
                 playVideo();
+            }
+        });
+
+        findViewById(R.id.btn_file).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        findViewById(R.id.btn_md).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,DrawerActivity.class));
             }
         });
 
@@ -120,12 +135,18 @@ public class MainActivity extends Activity {
         rl.setVisibility(View.VISIBLE);
         Uri uri = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
 
-
         //设置视频路径
         vv.setVideoURI(uri);
 
-        //开始播放视频
-        vv.start();
+
+        vv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                //开始播放视频
+                mp.start();
+
+            }
+        });
 
     }
 
@@ -146,5 +167,6 @@ public class MainActivity extends Activity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
 
 }
